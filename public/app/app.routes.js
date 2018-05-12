@@ -27,6 +27,10 @@ angular.module('appRoutes', ['ui.router', 'ngCookies'])
 				url: '/account',
 				templateUrl: 'app/views/pages/account.html',
 				controller: 'AccountController'
+			})
+			.state('contact', {
+				url: "/contact",
+				templateUrl: 'app/views/pages/contact.html',
+				controller: 'ContactController'
 			});
-
 	});
