@@ -1,0 +1,34 @@
+<div class="ass-menu-button" id="purple" title="{{title}}" ng-click="openSidebar($event)">
+    <i class="fa fa-bars fa-2x" style="color: #EAF2F8;"></i>
+</div>
+<div title="">
+    <aside class="ass-aside-menu ass-slide-{{slide}}" style="padding: 0px;">
+        <br>
+        <br>
+        <small ng-if="settings.close" class="ass-aside-menu-close" ng-click="closeSidebar()">
+            <span ng-if="!settings.closeIcon">[x]</span>
+            <span ng-if="settings.closeIcon">
+                <i class="{{settings.closeIcon}}"></i>
+            </span>
+        </small>
+
+        <h3 class="ass-aside-menu-title text-center" ng-bind="::title"></h3>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action" ng-repeat="item in items" style="background-color: transparent; border-radius: 0px;" ng-click="toggleSidebar(item.icon_sublist ? expandThis : closeSidebar)">
+                <a href="{{item.link}}" class="{{item.disableLink}}">
+                    <i ng-if="item.icon" class="{{item.icon}} ass-aside-menu-icon"></i>{{item.name}}</a>
+                <i ng-if="item.icon_sublist" class="{{item.icon_sublist}} ass-aside-menu-icon" style="position: absolute; right: 0px;" ng-click="expandThis()"></i>
+                <ul ng-show="item.sub_items && expand" class="list-group">
+                    <li class="list-group-item list-group-item-action text-center" ng-repeat="sub_item in item.sub_items" style="background-color: transparent; border-radius: 0px; border-left: 0px; border-right: 0px; border-color: #ddd">
+                        <a href="{{sub_item.link}}" ng-click="closeSidebar()">
+                            <i ng-if="sub_item.icon" class="{{sub_item.icon}} ass-aside-menu-icon"></i>{{sub_item.name}}</a>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+
+    </aside>
+    <div ng-if="state" class="ass-aside-overlay" ng-click="closeSidebar()"></div>
+</div>
