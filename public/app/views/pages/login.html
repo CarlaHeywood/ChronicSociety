@@ -1,3 +1,23 @@
+<style>
+        *{
+          font-family: 'Montserrat', sans-serif;
+        }
+        .btn-primary {
+          background-color: #515c3a;
+          border: none;
+        }
+        .btn-primary:hover {
+          background-color: grey;
+        }
+        .signup {
+          color: #515c3a; 
+          text-decoration-color: #515c3a;
+        }
+        .jumbotron {
+          color:#515c3a;
+          background-color: white;
+        }
+      </style>
 <div class="jumbotron text-center" style="border-radius: 0px;">
     <h1>Log In</h1>
 
@@ -15,7 +35,7 @@
         </div>
         <!-- <a href="/#/recordings"></a> -->
             <button ng-click="login(user)" class="btn btn-primary">Log In</button> 
-            <a href="/#!/signup">Sign Up</a>
+            <a class="signup" href="/#!/signup"> Sign Up</a>
         <!-- </a> -->
     </form>
 
