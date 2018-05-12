@@ -30,9 +30,9 @@ var UserSchema = new mongoose.Schema({
     required: true
   },
   address: {
-    street: {type: String, required: true},
-    city: {type: String, required: true},
-    state: {type: String, required: true}
+    street: {type: String},
+    city: {type: String},
+    state: {type: String}
   },
   preference: {
     edibles: Boolean,

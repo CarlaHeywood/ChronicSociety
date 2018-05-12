@@ -13,30 +13,25 @@ module.exports = function (app, express) {
         let user = new User(body);
 
         console.log(body);
-        user.save().then((user)=>{
-            console.log("Saved User", user);
+        user.save().then((user) => {
+            console.log("Calling generateAuthToken");
+            return user.generateAuthToken();
+        }).then((token) => {
+            console.log("Token created", token);
             res.status(200).send({
-                success: true, 
-                message: "user saved",
+                success: true,
+                message: "Login Success",
+                token: token,
                 user: user
-            })
+            });
+        }).catch((e) => {
+            res.status(400).send(e);
         })
-        // user.save().then((user) => {
-        //     console.log("Calling generateAuthToken");
-        //     return user.generateAuthToken();
-        // }).then((token) => {
-        //     console.log("Token created", token);
-        //     res.status(200).send({
-        //         success: true,
-        //         message: "Login Success",
-        //         token: token,
-        //         user: user
-        //     });
-        // }).catch((e) => {
-        //     res.status(400).send(e);
-        // })
     });
 
+    userApi.get("/user", authenticate, function(req, res){
+        console.log(req.body);
+    })
 
     // user log in
     userApi.post("/login", (req, res) => {
