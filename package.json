@@ -1,0 +1,39 @@
+{
+  "name": "chronic-society",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-chart.js": "^1.1.1",
+    "angular-route": "^1.6.9",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "latest",
+    "bootstrap": "^4.1.0",
+    "express": "latest",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.2.1",
+    "lodash": "^4.17.5",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "morgan": "^1.9.0",
+    "newsapi": "^2.2.2",
+    "popper.js": "^1.14.3",
+    "socket.io": "^2.1.0",
+    "validator": "^9.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlaHeywood/ChronicSociety.git"
+  },
+  "author": "Carla Hey, Aliff Macapinlac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlaHeywood/ChronicSociety/issues"
+  },
+  "homepage": "https://github.com/CarlaHeywood/ChronicSociety#readme"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "chronic-society",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-chart": "^0.5.0",
+    "d3": "^5.1.0",
+    "c3": "c3js-chart#^0.5.4",
+    "c3-angular": "^1.4.0",
+    "angular-material": "^1.1.8",
+    "angular-ui-router": "^1.0.15"
+  }
+}

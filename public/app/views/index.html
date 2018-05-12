@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <base href="/dashboard">
+
+  <title>Chronic Society</title>
+
+  <style>
+    html,
+    body {
+      background-color: #232020;
+      padding: 0px;
+
+    }
+
+
+
+    /* #purp {
+            background-color: purple;
+        } */
+  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="libs/c3/c3.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/angular-simple-sidebar.css">
+  <link rel="stylesheet" href="css/dt.css">
+
+  <!-- <link rel="stylesheet" href="css/style.css">  -->
+
+  <!-- JS -->
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+  <script type="text/javascript" src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="libs/angular-cookies/angular-cookies.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <script src="libs/d3/d3.min.js"></script>
+  <script src="libs/c3/c3.min.js"></script>
+  <script src="libs/angular-chart/angular-chart.min.js"></script>
+  <script src="libs/c3-angular/c3-angular.min.js"></script>
+
+
+  <!-- Angular Material Library -->
+  <script src="libs/angular-material/angular-material.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script> -->
+  <script src="libs/angular-route/angular-route.min.js"></script>
+
+
+
+  <!-- ANGULAR CUSTOM -->
+
+  <!--Controllers for Views-->
+
+  <script src="app/user/SignUpCtrl.js"></script>
+  <script src="app/common/DashboardCtrl.js"></script>
+  <script src="app/user/LoginCtrl.js"></script>
+  <script src="app/user/ProfileCtrl.js"></script>
+
+  <!-- <script src="app/controllers/SidebarCtrl.js"></script> -->
+
+  <!--Services-->
+  <script src="app/user/UserService.js"></script>
+
+  <!--Routes and Javascript APP MODULE for front end-->
+
+  <script type="text/javascript" src="app/app.routes.js"></script>
+  <!-- <script type="text/javascript" src="app/app.directives.js"></script> -->
+  <script type="text/javascript" src="app/app.js"></script>
+
+
+</head>
+
+<body ng-app="MyApp" class="backdrop">
+  <div class="container-fluid" style="margin: 0px; padding: 0px;">
+    <div ui-view class="backdrop"></div>
+  </div>
+</body>
+
+</html>
