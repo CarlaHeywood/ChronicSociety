@@ -23,11 +23,11 @@
   <form>
     <div class="form-group">
       <label for="name">First Name: </label>
-      <input class="form-control" type="name" ng-model="user.email" name="fname" id="fname" />
+      <input class="form-control" type="name" ng-model="user.firstname" name="fname" id="fname" />
     </div>
     <div class="form-group">
       <label for="name">Last Name: </label>
-      <input class="form-control" type="name" ng-model="user.email" name="lname" id="lname" />
+      <input class="form-control" type="name" ng-model="user.lastname" name="lname" id="lname" />
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -37,7 +37,7 @@
       <label for="password">Password:</label>
       <input class="form-control" type="password" ng-model="user.password" name="password" id="password" />
     </div>
-    <button ng-click="signup(user)" class="btn btn-primary">Register</button>
+    <button ng-click="register(user)" class="btn btn-primary">Register</button>
     <a class="login" href="/#!/login"> Log In</a>
   </form>
 </div>

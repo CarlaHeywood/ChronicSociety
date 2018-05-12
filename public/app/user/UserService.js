@@ -9,7 +9,7 @@ angular.module('UserService', []).factory('UserService', ['$rootScope', '$http',
         },
 
         get: function(user){
-            return $http.get('/user')
+            return $http.get('/users/user', setHeaders($rootScope.token))
         },
         login: function(user){
             return $http.post('/users/login', user);

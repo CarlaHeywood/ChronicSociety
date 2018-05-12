@@ -29,8 +29,19 @@ module.exports = function (app, express) {
         })
     });
 
-    userApi.get("/user", authenticate, function(req, res){
+    userApi.get("/user", authenticate, function (req, res) {
+        console.log("Called?")
         console.log(req.body);
+        User.find({ _id: req.user }, function (err, user) {
+            if (err) console.log(err);
+            console.log(user);
+
+            res.status(200).send({
+                success: true, 
+                message: "User retrieved", 
+                user: user
+            })
+        })
     })
 
     // user log in

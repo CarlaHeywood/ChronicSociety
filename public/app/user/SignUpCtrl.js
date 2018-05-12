@@ -5,7 +5,7 @@ angular.module('SignUpCtrl', ['UserService'])
   $scope.user; 
    
 
-  $scope.signup = function(user){
+  $scope.register = function(user){
     console.log(user);
     UserService.create(user).then((success)=>{
       $rootScope.storeAccount(success.data.token, success.data.user);
