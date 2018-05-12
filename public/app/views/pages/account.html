@@ -1,9 +1,15 @@
-<div class="container" style="min-height: 900px; margin-top: 25px; color: #515c3a">
+<div class="container" style="min-height: 900px; margin-top: 25px; color: #89aa43">
     <div class="container text-right" style="font-size:28px;">
     </div>
     <h2 style="margin:auto; text-align: center;">
         Account
     </h2>
+    <div class="text-right" style="font-size:15px;">
+        <a ng-click="logout()" style="color:#89aa43; cursor: pointer;">
+            Logout
+            <i class="fa fa-sign-out-alt"></i>
+        </a>
+    </div>
     <form>
         <div class="form-group">
             <label for="firstname">First Name</label>
@@ -38,60 +44,62 @@
         <br>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" ng-model="user.edibles"> Edibles
+                <input class="form-check-input" type="checkbox" ng-model="user.preference.edibles"> Edibles
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" ng-model="user.flower"> Flower
+                <input class="form-check-input" type="checkbox" ng-model="user.preference.flower"> Flower
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" ng-model="user.concentrates"> Concentrates
+                <input class="form-check-input" type="checkbox" ng-model="user.preference.concentrates"> Concentrates
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" ng-model="user.vape"> Vape
+                <input class="form-check-input" type="checkbox" ng-model="user.preference.vape"> Vape
             </label>
         </div>
 
         <div class="form-group">
             <label class="mr-sm-2" for="frequency">How Often</label>
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0">
+            <select class="form-control mb-2 mr-sm-2 mb-sm-0" selected="Choose..." ng-model="user.frequency" ng-options="freq as (freq) for freq in ['Daily', 'Weekly', 'Monthly'] track by freq">
+            </select>
+            <!-- <select class="custom-select ">
                 <option selected>Choose...</option>
                 <option value="daily" ng-model="user.frequency">Daily</option>
                 <option value="weekly" ng-model="user.frequency">Weekly</option>
                 <option value="monthly" ng-model="user.frequency">Monthly</option>
-            </select>
+            </select> -->
 
         </div>
         <label for="preference">Strain Type</label>
         <br>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Indica
+                <input class="form-check-input" type="checkbox" ng-model="user.strain.indica"> Indica
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Sativa
+                <input class="form-check-input" type="checkbox" ng-model="user.strain.sativa"> Sativa
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Hybrid
+                <input class="form-check-input" type="checkbox" ng-model="user.strain.hybrid"> Hybrid
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> CBD
+                <input class="form-check-input" type="checkbox" ng-model="user.strain.cbd"> CBD
             </label>
         </div>
         <br>
         <div class="text-center">
-            <button ng-click="save(user)" class="btn btn-success">Save</button>
+            <button ng-click="update(user)" class="btn btn-success">Save</button>
         </div>
 
     </form>

@@ -1,42 +1,53 @@
-var MyApp = angular.module('MyApp', ['appRoutes', 'SignUpCtrl', 'LoginCtrl', 'AccountCtrl', 'DashboardCtrl', 'ngCookies']);
+var MyApp = angular.module('MyApp', ['appRoutes', 'ngCookies', 'SignUpCtrl', 'LoginCtrl', 'AccountCtrl', 'DashboardCtrl']);
 
 
 MyApp.run(['$rootScope', '$cookies', '$location', function ($rootScope, $cookies, $location) {
 
+    console.log("Running")
+    console.log("User: ", $rootScope.user);
+    console.log("cookies object: ", $cookies.getObject("user"))
+    console.log("cookies object: ", $cookies.getObject("token"))
+    console.log("$cookies is: ", $cookies)
+
     if (!$rootScope.token)
         $rootScope.token = $cookies.getObject("token");
 
-    if (!$rootScope.account)
-        $rootScope.account = $cookies.getObject("user");
+    if (!$rootScope.user)
+        $rootScope.user = $cookies.getObject("user");
 
-    $rootScope.currentStep = parseInt($cookies.getObject("tour"), 10) || 0;
+    // $rootScope.currentStep = parseInt($cookies.getObject("tour"), 10) || 0;
 
-    $rootScope.tourEnded = function () {
-        $cookies.putObject('tour', -1);
-    };
+    // $rootScope.tourEnded = function () {
+    //     $cookies.putObject('tour', -1);
+    // };
 
-    $rootScope.stepComplete = function (stp) {
-        $cookies.putObject('tour', stp);
-    };
+    // $rootScope.stepComplete = function (stp) {
+    //     $cookies.putObject('tour', stp);
+    // };
 
-    $rootScope.tourComplete = function () {
-        $cookies.putObject('tour', -1);
-    };
+    // $rootScope.tourComplete = function () {
+    //     $cookies.putObject('tour', -1);
+    // };
 
-    $rootScope.tourRestart = function () {
-        $rootScope.currentStep = 0;
-        $cookies.putObject('tour', $rootScope.currentStep);
-    };
+    // $rootScope.tourRestart = function () {
+    //     $rootScope.currentStep = 0;
+    //     $cookies.putObject('tour', $rootScope.currentStep);
+    // };
 
     $rootScope.storeAccount = function (token, user) {
         if (user) {
             $rootScope.user = user;
-            $cookies.putObject('account', $rootScope.user);
+            console.log($rootScope.user);
+            $cookies.putObject('user', $rootScope.user);
+            console.log($cookies.getObject('user'));
         }
         if (token) {
             $rootScope.token = token;
+            console.log($rootScope.token);
             $cookies.putObject('token', $rootScope.token);
+            console.log($cookies.getObject('token'));
         }
+        console.log("$COOKIES AFTER", $cookies)
     };
 
     $rootScope.isLoggedIn = function () {

@@ -37,10 +37,43 @@ module.exports = function (app, express) {
             console.log(user);
 
             res.status(200).send({
-                success: true, 
-                message: "User retrieved", 
+                success: true,
+                message: "User retrieved",
                 user: user
             })
+        })
+    })
+
+    userApi.put("/user/update", authenticate, function (req, res) {
+        console.log("Called Update User")
+        var body = _.pick(req.body, ['email', 'password', 'firstname', 'lastname', 'address', 'frequency', 'strain', 'preference']);
+        console.log("Body is: ", body);
+        console.log("USER ", req.user._id)
+        User.findById(req.user._id, function (err, user) {
+            if (err || !user) return res.status(404).send({
+                success: false, 
+                message: "Not Found",
+
+            });
+            // console.log("THE USER", user);
+
+            user.firstname = body.firstname;
+            user.lastname = body.lastname;
+            user.address = body.address; 
+            user.email = body.email; 
+            user.frequency = body.frequency; 
+            user.strain = body.strain; 
+            user.preference = body.preference;  
+            user.save().then((user) => {
+                res.status(200).send({
+                    success: true,
+                    message: "User retrieved",
+                    user: user
+                })
+            }, (err)=>{
+                console.log("An error occured", err);
+            })
+
         })
     })
 

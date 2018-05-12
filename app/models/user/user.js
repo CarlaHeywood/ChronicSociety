@@ -42,7 +42,7 @@ var UserSchema = new mongoose.Schema({
   },
   frequency: {
     type: String, 
-    enum: ['daily', 'weekly', 'monthly']
+    enum: ['Daily', 'Weekly', 'Monthly']
   },
   strain: {
     indica: Boolean, 
@@ -66,7 +66,7 @@ UserSchema.methods.toJSON = function () {
   var user = this;
   var userObject = user.toObject();
 
-  return _.pick(userObject, ['_id', 'email', 'firstname', 'lastname', 'preference', 'strain', 'frequency', 'address']);
+  return _.pick(userObject, ['_id', 'email', 'firstname', 'lastname', 'preference', 'strain', 'frequency', 'address', 'password']);
 
 }
 
@@ -97,6 +97,7 @@ UserSchema.methods.removeToken = function (token) {
 UserSchema.statics.findByToken = function (token) {
   var User = this;
   var decoded;
+  console.log("Token is ", token)
   try {
     decoded = jwt.verify(token, 'abc123');
   } catch (e) {
