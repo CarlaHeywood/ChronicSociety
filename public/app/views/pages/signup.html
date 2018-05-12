@@ -1,10 +1,34 @@
+<style>
+  .btn-primary {
+    background-color: #515c3a;
+    border: none;
+  }
+  .btn-primary:hover {
+    background-color: grey;
+  }
+  .login {
+    color: #515c3a; 
+    text-decoration-color: #515c3a;
+  }
+  .jumbotron {
+    color:#515c3a;
+    background-color: white;
+  }
+</style>
 <div class="jumbotron text-center">
-  <h1>Sign Up</h1>
-
-  <p>{{ text }}</p>
+  <h1>Register</h1>
+  <p>CHRONIC SOCIETY</p>
 </div>
 <div class="container">
   <form>
+    <div class="form-group">
+      <label for="name">First Name: </label>
+      <input class="form-control" type="name" ng-model="user.email" name="fname" id="fname" />
+    </div>
+    <div class="form-group">
+      <label for="name">Last Name: </label>
+      <input class="form-control" type="name" ng-model="user.email" name="lname" id="lname" />
+    </div>
     <div class="form-group">
       <label for="email">Email:</label>
       <input class="form-control" type="email" ng-model="user.email" name="email" id="email" />
@@ -13,8 +37,7 @@
       <label for="password">Password:</label>
       <input class="form-control" type="password" ng-model="user.password" name="password" id="password" />
     </div>
-    <button ng-click="signup(user)" class="btn btn-primary">Sign Up</button>
-    <a href="/#!/login">Log In</a>
+    <button ng-click="signup(user)" class="btn btn-primary">Register</button>
+    <a class="login" href="/#!/login"> Log In</a>
   </form>
-
 </div>
