@@ -21,7 +21,7 @@ angular.module("AccountCtrl", ['UserService'])
             UserService.get()
             .then((success)=>{
                 console.log("GetUser Success: ", success);
-                $scope.user = success.data.user;
+                $scope.user = success.data.user[0];
             }, (err)=>{
                 console.log("Err: ", err);
             })
