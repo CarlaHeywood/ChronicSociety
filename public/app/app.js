@@ -1,4 +1,4 @@
-var MyApp = angular.module('MyApp', ['appRoutes', 'SignUpCtrl', 'LoginCtrl', 'ProfileCtrl', 'DashboardCtrl', 'ngCookies']);
+var MyApp = angular.module('MyApp', ['appRoutes', 'SignUpCtrl', 'LoginCtrl', 'AccountCtrl', 'DashboardCtrl', 'ngCookies']);
 
 
 MyApp.run(['$rootScope', '$cookies', '$location', function ($rootScope, $cookies, $location) {

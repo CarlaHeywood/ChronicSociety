@@ -8,6 +8,9 @@ angular.module('UserService', []).factory('UserService', ['$rootScope', '$http',
             return $http.post('/users', user) ;
         },
 
+        get: function(user){
+            return $http.get('/user')
+        },
         login: function(user){
             return $http.post('/users/login', user);
         },

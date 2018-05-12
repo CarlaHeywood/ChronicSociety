@@ -23,10 +23,10 @@ angular.module('appRoutes', ['ui.router', 'ngCookies'])
 				templateUrl: 'app/views/pages/signup.html',
 				controller: 'SignUpController'
 			})
-			.state('profile', {
-				url: '/profile',
-				templateUrl: 'app/views/pages/profile.html',
-				controller: 'ProfileController'
+			.state('account', {
+				url: '/account',
+				templateUrl: 'app/views/pages/account.html',
+				controller: 'AccountController'
 			});
 
 	});

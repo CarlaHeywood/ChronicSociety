@@ -1,0 +1,99 @@
+<div class="container" style="min-height: 900px; margin-top: 25px; color: #515c3a">
+    <div class="container text-right" style="font-size:28px;">
+    </div>
+    <h2 style="margin:auto; text-align: center;">
+        Accounts
+    </h2>
+    <form>
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input class="form-control" type=text ng-model="user.firstname" name="firstname" id="firstname" />
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input class="form-control" type=text ng-model="user.lastname" name="lastname" id="lastname" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type=email ng-model="user.email" name="email" id="email" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input class="form-control" type="password" ng-model="user.password" name="password" id="password" />
+        </div>
+        <label for="address">Address</label>
+        <div class="form-group row">
+            <div class="col-md-4">
+                <input class="form-control" type=text ng-model="user.address.street" name="address" id="street" placeholder="Street" />
+            </div>
+            <div class="col-md-4">
+                <input class="form-control" type=text ng-model="user.address.city" name="address" id="city" placeholder="City" />
+            </div>
+            <div class="col-md-4">
+                <input class="form-control" type=text ng-model="user.address.state" name="address" id="state" placeholder="State" />
+            </div>
+        </div>
+
+        <label for="preference">Preference</label>
+        <br>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" ng-model="user.edibles"> Edibles
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" ng-model="user.flower"> Flower
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" ng-model="user.concentrates"> Concentrates
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" ng-model="user.vape"> Vape
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="mr-sm-2" for="frequency">How Often</label>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0">
+                <option selected>Choose...</option>
+                <option value="daily" ng-model="user.frequency">Daily</option>
+                <option value="weekly" ng-model="user.frequency">Weekly</option>
+                <option value="monthly" ng-model="user.frequency">Monthly</option>
+            </select>
+
+        </div>
+        <label for="preference">Strain Type</label>
+        <br>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Indica
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Sativa
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Hybrid
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> CBD
+            </label>
+        </div>
+        <br>
+        <div class="text-center">
+            <button ng-click="save(user)" class="btn btn-success">Save</button>
+        </div>
+
+    </form>
+
+</div>
